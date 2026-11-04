@@ -45,3 +45,62 @@
 .service-accordion[open]>.service-accordion-trigger i{transform:rotate(45deg)}
 .service-accordion .service-price-block{border-top:0;padding:26px 0 38px}
 @media(max-width:700px){.service-accordion-trigger{padding:17px 16px;gap:12px}.service-accordion-trigger strong{font-size:15px}}
+
+
+/* Premium hover pop-up interaction for pricing plan cards */
+.service-plan{
+  isolation:isolate;
+  overflow:visible;
+  transform:translateY(0) scale(1);
+  transition:transform .32s cubic-bezier(.2,.75,.25,1),
+    box-shadow .32s ease,border-color .32s ease,background .32s ease;
+}
+.service-plan::before{
+  content:"";
+  position:absolute;
+  inset:-1px;
+  z-index:-1;
+  border-radius:inherit;
+  pointer-events:none;
+  opacity:0;
+  background:linear-gradient(135deg,rgba(13,91,53,.10),rgba(242,106,33,.07));
+  transition:opacity .3s ease;
+}
+.service-plan:hover,
+.service-plan:focus-within{
+  z-index:2;
+  transform:translateY(-10px) scale(1.015);
+  border-color:#8fbea0;
+  box-shadow:0 24px 48px rgba(13,91,53,.14),0 8px 18px rgba(242,106,33,.07);
+}
+.service-plan:hover::before,
+.service-plan:focus-within::before{opacity:1}
+.service-plan h3{transition:color .25s ease,transform .25s ease}
+.service-plan:hover h3,
+.service-plan:focus-within h3{color:var(--green);transform:translateY(-2px)}
+.service-plan li{transition:transform .25s ease,color .25s ease}
+.service-plan:hover li,
+.service-plan:focus-within li{color:#344c3c}
+.service-plan:hover li:before,
+.service-plan:focus-within li:before{color:var(--orange)}
+.service-plan-cta{transition:transform .25s ease,box-shadow .25s ease,filter .25s ease}
+.service-plan:hover .service-plan-cta,
+.service-plan:focus-within .service-plan-cta{
+  transform:translateY(-2px);
+  box-shadow:0 11px 22px rgba(242,106,33,.2);
+  filter:saturate(1.08);
+}
+.service-plan.featured:hover,
+.service-plan.featured:focus-within{
+  border-color:#65a77a;
+  box-shadow:0 26px 52px rgba(13,91,53,.17),0 8px 20px rgba(242,106,33,.08);
+}
+@media(hover:none){
+  .service-plan:hover{transform:none;box-shadow:0 7px 22px rgba(20,66,39,.035)}
+}
+@media(max-width:700px){
+  .service-plan:hover,.service-plan:focus-within{transform:translateY(-3px) scale(1)}
+}
+@media(prefers-reduced-motion:reduce){
+  .service-plan,.service-plan::before,.service-plan h3,.service-plan li,.service-plan-cta{transition:none!important}
+}
