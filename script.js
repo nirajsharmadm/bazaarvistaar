@@ -45,3 +45,19 @@ document.getElementById("enquiryForm")?.addEventListener("submit", event => {
 
   window.open(`https://wa.me/${number}?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
 });
+
+
+document.querySelectorAll(".pricing-whatsapp").forEach(button => {
+  button.addEventListener("click", event => {
+    event.preventDefault();
+    const config = window.BAZAARVISTAAR_CONFIG || {};
+    const number = (config.whatsappNumber || "").replace(/\\D/g, "");
+    if (!number) {
+      document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+      return;
+    }
+    const plan = button.dataset.plan || "a pricing plan";
+    const message = `Hello BazaarVistaar! I’m interested in the ${plan} plan. Please share the details and next steps.`;
+    window.open(`https://wa.me/${number}?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
+  });
+});
