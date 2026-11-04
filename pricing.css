@@ -31,3 +31,17 @@
 @media(max-width:900px){.service-price-grid{gap:12px}.service-plan{padding:21px 18px}.service-plan-price{font-size:27px}}
 @media(max-width:700px){.catalogue-intro{margin-bottom:32px}.service-price-block{padding:30px 0 34px}.service-price-heading{align-items:flex-start;flex-direction:column;gap:8px}.service-price-grid{grid-template-columns:1fr;gap:13px}.service-plan{padding:22px;border-radius:16px}.service-plan-summary{min-height:0}.catalogue-legend{gap:12px}}
 @media(prefers-reduced-motion:reduce){.service-plan{transition:none!important}}
+
+/* Collapsible service pricing: show only service buttons until selected */
+.service-accordion{border-top:1px solid #e6ece5;scroll-margin-top:100px}
+.service-accordion:last-of-type{border-bottom:1px solid #e6ece5}
+.service-accordion-trigger{list-style:none;display:flex;align-items:center;gap:16px;width:100%;padding:20px 22px;cursor:pointer;border:1px solid #e3ebe2;border-radius:14px;background:#fff;color:var(--green-dark);transition:background .2s ease,border-color .2s ease}
+.service-accordion-trigger::-webkit-details-marker{display:none}
+.service-accordion-trigger::marker{content:""}
+.service-accordion-trigger:hover,.service-accordion[open]>.service-accordion-trigger{background:#f4faf4;border-color:#b8d2bd}
+.service-accordion-trigger span{font-size:12px;font-weight:800;color:var(--orange);letter-spacing:1px}
+.service-accordion-trigger strong{font-size:17px;text-align:left;flex:1}
+.service-accordion-trigger i{font-style:normal;font-size:25px;line-height:1;color:var(--green);font-weight:500;transition:transform .2s ease}
+.service-accordion[open]>.service-accordion-trigger i{transform:rotate(45deg)}
+.service-accordion .service-price-block{border-top:0;padding:26px 0 38px}
+@media(max-width:700px){.service-accordion-trigger{padding:17px 16px;gap:12px}.service-accordion-trigger strong{font-size:15px}}
