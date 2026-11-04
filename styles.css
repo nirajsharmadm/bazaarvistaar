@@ -873,3 +873,38 @@ a{color:inherit;text-decoration:none}.container{width:min(1200px,calc(100% - 48p
       linear-gradient(180deg,rgba(249,248,240,.10),transparent 8%,transparent 92%,rgba(249,248,240,.22));
   }
 }
+
+
+/* Service catalogue card and pricing-link hover polish */
+.services-standard-grid{align-items:stretch;gap:22px}
+.service-standard-card{
+  border-radius:20px;
+  background:linear-gradient(155deg,#fff 0%,#fcfdfb 100%);
+}
+.service-standard-card:hover,
+.service-standard-card:focus-within{
+  transform:translateY(-8px);
+  border-color:#9fc5a8;
+  box-shadow:0 20px 40px rgba(13,91,53,.12),0 5px 15px rgba(242,106,33,.055);
+}
+.service-standard-link{
+  position:relative;
+  text-decoration:none;
+  transition:color .25s ease, padding .25s ease, background .25s ease;
+}
+.service-standard-link:hover,
+.service-standard-link:focus-visible{
+  color:var(--orange);
+  outline:none;
+}
+.service-standard-link:focus-visible{
+  border-radius:8px;
+  box-shadow:0 0 0 3px rgba(242,106,33,.18);
+}
+.service-standard-link span{
+  transition:transform .25s ease;
+}
+@media(max-width:600px){
+  .services-standard-grid{gap:15px}
+  .service-standard-card{border-radius:17px}
+}
