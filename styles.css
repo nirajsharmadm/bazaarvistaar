@@ -282,3 +282,71 @@ a{color:inherit;text-decoration:none}.container{width:min(1200px,calc(100% - 48p
 .founder-copy h2{max-width:620px}
 .founder-copy>p:not(.eyebrow){font-size:15px;line-height:1.8;color:#5e6a62;max-width:680px}
 @media(max-width:760px){.about-grid{grid-template-columns:1fr;gap:28px}.founder-portrait{max-width:280px}.founder-copy{text-align:center}.founder-copy h2,.founder-copy>p:not(.eyebrow){margin-left:auto;margin-right:auto}}
+
+
+/* Founder card typography and image presentation refinement */
+.about-mark.founder-portrait{
+  display:flex;
+  flex-direction:column;
+  align-self:center;
+  max-width:390px;
+  padding:12px;
+  background:#fff;
+  border:1px solid #e5eae3;
+  border-radius:24px;
+  box-shadow:0 14px 38px rgba(22,55,35,.09);
+}
+.founder-portrait img{
+  display:block;
+  width:100%;
+  height:auto;
+  max-height:390px;
+  aspect-ratio:auto;
+  object-fit:contain;
+  object-position:center;
+  border-radius:16px;
+  background:#fff;
+}
+.founder-photo-caption{
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:center;
+  justify-content:center;
+  gap:7px;
+  width:100%;
+  padding:17px 10px 13px;
+  text-align:center;
+}
+.founder-photo-caption .founder-name{
+  display:block;
+  width:100%;
+  margin:0;
+  color:var(--green-dark);
+  font-size:clamp(20px,2vw,24px);
+  font-weight:800;
+  line-height:1.2;
+  letter-spacing:-.45px;
+  white-space:normal;
+}
+.founder-photo-caption .founder-role{
+  display:inline-block;
+  padding:6px 12px;
+  border-radius:30px;
+  background:#fff1e6;
+  color:#e9651b;
+  font-size:10px;
+  line-height:1.2;
+  font-weight:800;
+  letter-spacing:1.1px;
+}
+.founder-photo-caption .founder-brand{
+  display:block;
+  color:#526057;
+  font-size:13px;
+  line-height:1.3;
+  font-weight:600;
+}
+@media(max-width:760px){
+  .about-mark.founder-portrait{max-width:300px}
+  .founder-portrait img{max-height:320px}
+}
