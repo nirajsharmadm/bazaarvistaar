@@ -783,3 +783,44 @@ a{color:inherit;text-decoration:none}.container{width:min(1200px,calc(100% - 48p
 @media(prefers-reduced-motion:reduce){
   .business-pills span{transition:none!important}
 }
+
+
+/* Softer mobile hero artwork treatment — blend the image into the page */
+@media(max-width:760px){
+  .hero-visual{
+    position:relative;
+    isolation:isolate;
+    overflow:hidden;
+    height:340px;
+    margin-top:14px;
+    padding:7px;
+    border:1px solid rgba(225,231,218,.9);
+    border-radius:34px;
+    background:linear-gradient(145deg,rgba(255,255,255,.92),rgba(246,248,237,.92));
+    box-shadow:0 14px 34px rgba(29,69,43,.09),0 3px 10px rgba(242,106,31,.035);
+  }
+  .hero-visual>img{
+    width:100%;
+    height:100%;
+    display:block;
+    object-fit:cover;
+    object-position:center;
+    border-radius:27px;
+    filter:saturate(.94) contrast(.97);
+    mix-blend-mode:normal;
+    -webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 7%,#000 94%,transparent 100%);
+    mask-image:linear-gradient(to bottom,transparent 0%,#000 7%,#000 94%,transparent 100%);
+  }
+  .hero-visual:after{
+    content:"";
+    position:absolute;
+    z-index:2;
+    inset:7px;
+    border-radius:27px;
+    pointer-events:none;
+    box-shadow:inset 0 0 22px rgba(249,248,240,.22);
+    background:
+      linear-gradient(90deg,rgba(249,248,240,.14),transparent 9%,transparent 91%,rgba(249,248,240,.34)),
+      linear-gradient(180deg,rgba(249,248,240,.18),transparent 11%,transparent 91%,rgba(249,248,240,.20));
+  }
+}
