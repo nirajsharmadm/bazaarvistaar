@@ -350,3 +350,45 @@ a{color:inherit;text-decoration:none}.container{width:min(1200px,calc(100% - 48p
   .about-mark.founder-portrait{max-width:300px}
   .founder-portrait img{max-height:320px}
 }
+
+
+/* Founder introduction: clean name/title hierarchy and contained text */
+.about-section .about-grid{align-items:center}
+.about-section .founder-copy{min-width:0;width:100%;max-width:680px}
+.founder-copy .founder-heading{
+  display:block;
+  width:100%;
+  max-width:100%;
+  margin:0 0 5px;
+  color:var(--green-dark);
+  font-size:clamp(30px,3.5vw,44px);
+  line-height:1.12;
+  letter-spacing:-1.35px;
+  overflow-wrap:normal;
+  word-break:normal;
+}
+.founder-copy .founder-title{
+  display:block;
+  margin:0 0 20px;
+  color:var(--orange);
+  font-size:clamp(17px,1.8vw,21px);
+  line-height:1.4;
+  font-weight:700;
+}
+.founder-copy>p:not(.eyebrow):not(.founder-title){
+  width:100%;
+  max-width:620px;
+  margin:0 0 14px;
+  font-size:15px;
+  line-height:1.75;
+  color:#5e6a62;
+  overflow-wrap:break-word;
+}
+.founder-copy .eyebrow{margin-bottom:12px}
+@media(max-width:760px){
+  .about-section .about-grid{width:100%;min-width:0}
+  .about-section .founder-copy{max-width:100%;padding-inline:4px}
+  .founder-copy .founder-heading{font-size:clamp(29px,8vw,38px);letter-spacing:-.8px}
+  .founder-copy .founder-title{font-size:17px;margin-bottom:16px}
+  .founder-copy>p:not(.eyebrow):not(.founder-title){font-size:14px;line-height:1.7}
+}
