@@ -392,3 +392,80 @@ a{color:inherit;text-decoration:none}.container{width:min(1200px,calc(100% - 48p
   .founder-copy .founder-title{font-size:17px;margin-bottom:16px}
   .founder-copy>p:not(.eyebrow):not(.founder-title){font-size:14px;line-height:1.7}
 }
+
+
+/* Premium hover lift and reveal interaction for service cards */
+.service-standard-card{
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  transform:translateY(0) scale(1);
+  box-shadow:0 4px 16px rgba(22,55,35,.035);
+  transition:
+    transform .32s cubic-bezier(.2,.75,.25,1),
+    border-color .32s ease,
+    box-shadow .32s ease,
+    background-color .32s ease;
+}
+.service-standard-card::before{
+  content:"";
+  position:absolute;
+  z-index:-1;
+  top:0;
+  left:0;
+  width:100%;
+  height:4px;
+  background:linear-gradient(90deg,var(--green),#69a94f,var(--orange));
+  transform:scaleX(0);
+  transform-origin:left;
+  transition:transform .32s ease;
+}
+.service-standard-card .service-icon{
+  transition:transform .32s cubic-bezier(.2,.75,.25,1),box-shadow .32s ease;
+}
+.service-standard-card .service-number{
+  transition:color .25s ease,transform .25s ease;
+}
+.service-standard-card .service-standard-link{
+  transition:color .25s ease,padding .25s ease;
+}
+.service-standard-card:hover,
+.service-standard-card:focus-within{
+  transform:translateY(-9px) scale(1.012);
+  border-color:#a9cbb0;
+  box-shadow:0 22px 42px rgba(13,91,53,.13),0 5px 14px rgba(242,106,33,.06);
+  background:#fff;
+}
+.service-standard-card:hover::before,
+.service-standard-card:focus-within::before{
+  transform:scaleX(1);
+}
+.service-standard-card:hover .service-icon,
+.service-standard-card:focus-within .service-icon{
+  transform:translateY(-3px) rotate(-5deg) scale(1.08);
+  box-shadow:0 8px 16px rgba(13,91,53,.10);
+}
+.service-standard-card:hover .service-number,
+.service-standard-card:focus-within .service-number{
+  color:var(--orange);
+  transform:translateY(-2px);
+}
+.service-standard-card:hover .service-standard-link,
+.service-standard-card:focus-within .service-standard-link{
+  color:var(--orange);
+  padding-left:4px;
+}
+.service-standard-card:hover .service-standard-link span,
+.service-standard-card:focus-within .service-standard-link span{
+  display:inline-block;
+  transform:translateX(4px);
+}
+.service-standard-link span{transition:transform .25s ease}
+@media(hover:none){
+  .service-standard-card:hover{transform:none;box-shadow:0 4px 16px rgba(22,55,35,.035)}
+}
+@media(prefers-reduced-motion:reduce){
+  .service-standard-card,.service-standard-card::before,.service-standard-card .service-icon,
+  .service-standard-card .service-number,.service-standard-card .service-standard-link,
+  .service-standard-link span{transition:none!important}
+}
