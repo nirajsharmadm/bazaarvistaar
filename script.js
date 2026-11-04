@@ -61,3 +61,30 @@ document.querySelectorAll(".pricing-whatsapp").forEach(button => {
     window.open(`https://wa.me/${number}?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
   });
 });
+
+
+// Open the exact pricing accordion when arriving from a service-card link.
+function openLinkedServicePricing() {
+  const rawHash = window.location.hash.slice(1);
+  if (!rawHash) return;
+  let targetId;
+  try { targetId = decodeURIComponent(rawHash); } catch { targetId = rawHash; }
+  const target = document.getElementById(targetId);
+  if (!target || !target.matches("details.service-accordion")) return;
+
+  // Close other service panels so only the requested service is shown.
+  document.querySelectorAll("details.service-accordion[open]").forEach(panel => {
+    if (panel !== target) panel.open = false;
+  });
+  target.open = true;
+
+  // Wait for the details content to expand, then align it below the sticky header.
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  });
+}
+
+window.addEventListener("load", openLinkedServicePricing);
+window.addEventListener("hashchange", openLinkedServicePricing);
