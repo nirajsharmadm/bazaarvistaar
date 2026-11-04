@@ -137,3 +137,32 @@ a{color:inherit;text-decoration:none}.container{width:min(1200px,calc(100% - 48p
 .pricing-contact-inner p:not(.eyebrow){color:#d6e4d9;margin:0}
 .pricing-contact-inner .btn{flex-shrink:0}
 @media(max-width:760px){.pricing-page-hero{padding:55px 0 48px}.pricing-page-hero h1{letter-spacing:-1.3px}.pricing-page-hero-inner>p:not(.eyebrow){font-size:14px}.pricing-contact-inner{display:block}.pricing-contact-inner .btn{margin-top:20px}}
+
+
+/* Standardized subscription-style pricing layout */
+.pricing-section{background:#f7f8f7;padding-top:64px}
+.pricing-intro{text-align:center;max-width:720px;margin:0 auto 38px}
+.pricing-intro .eyebrow{margin-bottom:12px}
+.pricing-intro h2{font-size:clamp(29px,3.4vw,42px);line-height:1.18;letter-spacing:-1.2px;color:var(--green-dark);margin:0 0 12px}
+.pricing-intro h2 span{color:var(--orange)}
+.pricing-intro>p:not(.eyebrow){color:var(--muted);font-size:15px;margin:0}
+.billing-note{display:inline-flex;align-items:center;margin-top:18px;padding:6px 12px;border:1px solid #dfe7df;border-radius:30px;background:#fff;color:#536158;font-size:10px;font-weight:800;letter-spacing:1.4px}
+.pricing-grid{gap:16px;align-items:stretch}
+.pricing-card{border:1px solid #dfe5df;border-radius:16px;padding:27px 24px 25px;box-shadow:0 4px 16px rgba(22,55,35,.035);min-height:100%;transition:border-color .2s,box-shadow .2s}
+.pricing-card:hover{border-color:#a9c5b0;box-shadow:0 12px 28px rgba(22,55,35,.08)}
+.pricing-card.popular{transform:none;border:2px solid var(--green);box-shadow:0 12px 30px rgba(13,91,53,.10)}
+.popular-ribbon{right:18px;background:var(--green);border-radius:0 0 8px 8px}
+.plan-label{font-size:10px;letter-spacing:1.6px;color:#66746a}
+.pricing-top h3{font-size:23px;letter-spacing:-.4px;margin-bottom:8px}
+.pricing-top p{min-height:48px;line-height:1.55}
+.plan-price{margin:23px 0 18px;gap:6px}
+.plan-price strong{font-size:39px;letter-spacing:-1.8px}
+.plan-price span{font-size:12px}
+.pricing-btn,.pricing-card.popular .pricing-btn{background:var(--green);box-shadow:none;border-radius:9px;min-height:46px}
+.pricing-btn:hover,.pricing-card.popular .pricing-btn:hover{background:var(--green-dark);box-shadow:none}
+.included-title{border-top:1px solid #edf0ec;padding-top:19px;margin:22px 0 14px;font-size:9px;letter-spacing:1.2px;color:#68766d}
+.plan-features{gap:12px}
+.plan-features li{font-size:12px;line-height:1.5;padding-left:24px}
+.plan-features li:before{background:#eaf4e9;color:var(--green)}
+.pricing-footnote{font-size:12px;line-height:1.7}
+@media(max-width:760px){.pricing-section{padding-top:48px}.pricing-intro{margin-bottom:26px}.pricing-grid{gap:14px}.pricing-card.popular{order:0}.pricing-card{min-height:0}.pricing-top p{min-height:0}}
