@@ -824,3 +824,52 @@ a{color:inherit;text-decoration:none}.container{width:min(1200px,calc(100% - 48p
       linear-gradient(180deg,rgba(249,248,240,.18),transparent 11%,transparent 91%,rgba(249,248,240,.20));
   }
 }
+
+
+/* Final mobile hero refinement: let the artwork sit naturally in the page */
+@media(max-width:760px){
+  .hero-visual{
+    width:calc(100% + 8px);
+    height:auto;
+    aspect-ratio:1.08 / 1;
+    margin:12px -4px 0;
+    padding:0;
+    overflow:hidden;
+    border:0;
+    border-radius:0;
+    background:transparent;
+    box-shadow:none;
+  }
+  .hero-visual:before{
+    width:82%;
+    height:auto;
+    aspect-ratio:1;
+    right:7%;
+    top:8%;
+    filter:blur(22px);
+    opacity:.62;
+  }
+  .hero-visual>img{
+    position:relative;
+    z-index:1;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:48% center;
+    border-radius:26px;
+    filter:saturate(.98) contrast(.99);
+    mix-blend-mode:normal;
+    box-shadow:0 12px 28px rgba(25,65,41,.09);
+    -webkit-mask-image:radial-gradient(ellipse 88% 91% at 50% 50%,#000 78%,transparent 100%);
+    mask-image:radial-gradient(ellipse 88% 91% at 50% 50%,#000 78%,transparent 100%);
+  }
+  .hero-visual:after{
+    inset:0;
+    z-index:2;
+    border-radius:26px;
+    box-shadow:none;
+    background:
+      linear-gradient(90deg,rgba(249,248,240,.12),transparent 8%,transparent 94%,rgba(249,248,240,.18)),
+      linear-gradient(180deg,rgba(249,248,240,.10),transparent 8%,transparent 92%,rgba(249,248,240,.22));
+  }
+}
