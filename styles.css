@@ -1112,3 +1112,14 @@ a{color:inherit;text-decoration:none}.container{width:min(1200px,calc(100% - 48p
  .privacy-content h2{font-size:19px;margin-top:28px}
  .privacy-intro{padding:16px 17px}
 }
+
+
+/* Founder name emphasis */
+.founder-photo-caption .founder-name{
+  font-size:clamp(27px,2.5vw,32px);
+  line-height:1.15;
+  letter-spacing:-.7px;
+}
+@media(max-width:760px){
+  .founder-photo-caption .founder-name{font-size:27px}
+}
