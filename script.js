@@ -40,6 +40,8 @@ document.getElementById("enquiryForm")?.addEventListener("submit", event => {
     `Name: ${data.get("name")}`,
     `Business: ${data.get("business")}`,
     `Mobile: ${data.get("phone")}`,
+    `Business location: ${data.get("location")}`,
+    `Website / online links: ${data.get("onlineLinks") || "Not provided"}`,
     `Service required: ${data.get("service")}`
   ].join("\n");
 
