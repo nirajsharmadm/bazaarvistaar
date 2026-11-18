@@ -1360,19 +1360,132 @@ a{color:inherit;text-decoration:none}.container{width:min(1200px,calc(100% - 48p
   }
 }
 
-/* Site-wide bottom-area spacing: shared CTA strips and footer across every page */
-@media (min-width:761px){
-  .pricing-contact-strip{
-    padding:30px 0;
-  }
-  .pricing-contact-inner{
-    gap:22px;
-  }
+/* BazaarVistaar signature bottom framing — shared footer and page-end CTA design */
+.site-footer{
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  background:
+    radial-gradient(ellipse at 8% 0%,rgba(36,134,75,.22),transparent 34%),
+    linear-gradient(135deg,#073d25 0%,#052f1e 100%);
+  border-top:3px solid transparent;
+  border-image:linear-gradient(90deg,#f26a21 0%,#f7a45c 18%,rgba(255,255,255,.12) 52%,#0d5b35 100%) 1;
+}
+.site-footer:before,
+.site-footer:after{
+  content:"";
+  position:absolute;
+  z-index:-1;
+  width:300px;
+  height:300px;
+  border:1px solid rgba(255,255,255,.07);
+  border-radius:50%;
+  pointer-events:none;
+}
+.site-footer:before{
+  left:-190px;
+  top:-205px;
+  box-shadow:0 0 0 28px rgba(255,255,255,.018),0 0 0 58px rgba(255,255,255,.014);
+}
+.site-footer:after{
+  right:-205px;
+  bottom:-235px;
+  box-shadow:0 0 0 28px rgba(255,255,255,.018),0 0 0 58px rgba(255,255,255,.014);
+}
+.site-footer .footer-main{
+  position:relative;
+  z-index:1;
+  margin-top:28px;
+  margin-bottom:22px;
+  padding:32px 34px;
+  border:1px solid rgba(224,244,228,.14);
+  border-radius:24px;
+  background:linear-gradient(135deg,rgba(255,255,255,.065),rgba(255,255,255,.025));
+  box-shadow:0 18px 42px rgba(0,0,0,.10),inset 0 1px 0 rgba(255,255,255,.045);
+  gap:30px;
+}
+.site-footer .footer-brand img{
+  width:184px;
+  padding:7px;
+  border:1px solid rgba(255,255,255,.55);
+  border-radius:13px;
+  box-shadow:0 8px 22px rgba(0,0,0,.12);
+}
+.site-footer .footer-brand p{
+  margin:12px 0 0;
+  color:#d3e5d7;
+  letter-spacing:.15px;
+}
+.site-footer .footer-main>div:not(:first-child){
+  padding-left:20px;
+  border-left:1px solid rgba(255,255,255,.11);
+  gap:10px;
+}
+.site-footer .footer-main b{
+  color:#fff;
+  font-size:13px;
+  letter-spacing:.35px;
+}
+.site-footer .footer-main a{
+  width:fit-content;
+  color:#c9ddcf;
+  transition:color .2s ease,transform .2s ease;
+}
+.site-footer .footer-main a:hover,
+.site-footer .footer-main a:focus-visible{
+  color:#ffad76;
+  transform:translateX(3px);
+}
+.site-footer .footer-bottom{
+  position:relative;
+  z-index:1;
+  border-top:1px solid rgba(255,255,255,.10);
+  padding:13px 0;
+  color:#b7d0bf;
+}
+.site-footer .footer-privacy-link{
+  color:#eaf4ec;
+}
+.pricing-contact-strip{
+  position:relative;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 90% 15%,rgba(255,255,255,.09),transparent 28%),
+    linear-gradient(120deg,#064528 0%,#0d5b35 58%,#073d25 100%);
+  padding:42px 0;
+}
+.pricing-contact-inner{
+  position:relative;
+  padding:28px 32px;
+  border:1px solid rgba(255,255,255,.19);
+  border-radius:22px;
+  background:linear-gradient(110deg,rgba(255,255,255,.075),rgba(255,255,255,.025));
+  box-shadow:0 14px 34px rgba(0,0,0,.10),inset 0 1px 0 rgba(255,255,255,.07);
+}
+.pricing-contact-inner .btn{
+  min-width:190px;
+  border:1px solid rgba(255,255,255,.18);
+  box-shadow:0 10px 24px rgba(242,106,33,.22);
+}
+@media(max-width:760px){
   .site-footer .footer-main{
-    padding:24px 0;
-    gap:26px;
+    margin-top:18px;
+    margin-bottom:16px;
+    padding:23px 20px;
+    border-radius:19px;
+    gap:22px 16px;
   }
-  .site-footer .footer-bottom{
-    padding:9px 0;
+  .site-footer .footer-main>div:not(:first-child){
+    padding-left:12px;
+  }
+  .site-footer .footer-brand img{width:165px}
+  .pricing-contact-strip{padding:30px 0}
+  .pricing-contact-inner{
+    padding:22px 20px;
+    border-radius:18px;
+  }
+  .pricing-contact-inner .btn{
+    width:100%;
+    margin-top:17px;
   }
 }
