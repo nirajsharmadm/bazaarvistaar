@@ -59,7 +59,7 @@ document.querySelectorAll(".pricing-whatsapp").forEach(button => {
       return;
     }
     const plan = button.dataset.plan || "a pricing plan";
-    const message = `Hello BazaarVistaar! I’m interested in the ${plan} plan. Please share the details and next steps.`;
+    const message = button.dataset.message || `Hello BazaarVistaar! I’m interested in ${plan}. Please share the details and next steps.`;
     window.open(`https://wa.me/${number}?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
   });
 });
