@@ -293,3 +293,21 @@
 @media(prefers-reduced-motion:reduce){
   .service-accordion-trigger,.service-accordion-trigger i{transition:none!important}
 }
+
+
+/* Consistent billing and pricing qualifiers across all plan cards */
+.service-plan-price{align-items:flex-start;row-gap:7px}
+.service-plan-price small{
+  flex:0 0 auto;
+  width:max-content;
+  max-width:100%;
+  padding:4px 8px;
+  border:1px solid #e7eee6;
+  border-radius:6px;
+  background:#f5f8f4;
+  color:#68776d;
+  font-size:11px;
+  line-height:1.35;
+  font-weight:700;
+  letter-spacing:.1px;
+}
