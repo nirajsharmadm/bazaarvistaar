@@ -131,3 +131,165 @@
  .pricing-custom-inner .btn{width:100%;justify-content:center}
  .pricing-faq{padding-top:42px;padding-bottom:42px}
 }
+
+
+/* Unified pricing-card layout refinement across every service */
+.service-accordion{
+  margin:0 0 14px;
+  border:0;
+}
+.service-accordion:last-of-type{border-bottom:0}
+.service-accordion-trigger{
+  min-height:68px;
+  padding:19px 22px;
+  border:1px solid #e5ebe3;
+  border-radius:15px;
+  box-shadow:0 4px 14px rgba(20,66,39,.025);
+}
+.service-accordion-trigger strong{font-size:16px;line-height:1.4}
+.service-accordion[open]>.service-accordion-trigger{
+  border-color:#a9cbb0;
+  border-radius:15px 15px 0 0;
+  background:#f5faf4;
+}
+.service-accordion .service-price-block{
+  padding:30px 22px 24px;
+  border:1px solid #e5ebe3;
+  border-top:0;
+  border-radius:0 0 15px 15px;
+  background:linear-gradient(180deg,#fbfdfb 0%,#fff 150px);
+}
+.service-price-heading{
+  align-items:center;
+  margin-bottom:25px;
+  gap:18px;
+}
+.service-price-heading>div{max-width:760px}
+.service-price-heading h2{line-height:1.2}
+.service-price-heading p:not(.service-kicker){max-width:700px}
+.service-price-heading>a{
+  padding:9px 13px;
+  border:1px solid #dce9dc;
+  border-radius:999px;
+  white-space:nowrap;
+  background:#fff;
+}
+.service-price-grid{gap:16px}
+.service-plan{
+  min-width:0;
+  padding:24px 22px 21px;
+  border-radius:16px;
+  box-shadow:0 5px 18px rgba(20,66,39,.045);
+}
+.service-plan-type{
+  min-height:25px;
+  align-items:center;
+  padding:5px 9px;
+  margin-bottom:13px;
+  border-radius:6px;
+  background:#eff6ef;
+  color:#236a40;
+  font-size:9px;
+  letter-spacing:1.15px;
+}
+.service-plan.featured .service-plan-type{
+  background:#e7f3e8;
+  color:#14713d;
+}
+.service-plan h3{
+  min-height:50px;
+  margin-bottom:10px;
+  font-size:19px;
+  line-height:1.3;
+}
+.service-plan-price{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:baseline;
+  column-gap:7px;
+  row-gap:2px;
+  min-height:69px;
+  margin:0 0 10px;
+  font-size:clamp(24px,2.15vw,29px);
+  line-height:1.2;
+  letter-spacing:-.8px;
+  overflow-wrap:anywhere;
+}
+.service-plan-price small{
+  display:block;
+  flex:0 0 100%;
+  margin:0;
+  font-size:11px;
+  line-height:1.4;
+  font-weight:700;
+  letter-spacing:.25px;
+  color:#77847b;
+}
+.service-plan-summary{
+  min-height:62px;
+  margin-bottom:14px;
+  font-size:12.5px;
+  line-height:1.6;
+}
+.service-plan ul{
+  padding-top:16px;
+  margin-bottom:20px;
+}
+.service-plan li{
+  margin-bottom:11px;
+  font-size:12px;
+  line-height:1.55;
+}
+.service-plan-cta{
+  min-height:46px;
+  padding:11px 12px;
+  border-radius:10px;
+  font-size:12px;
+  line-height:1.35;
+  text-align:center;
+}
+.service-plan.featured{
+  border-color:#a9cdb1;
+  background:linear-gradient(160deg,#fff 0%,#f6fbf6 100%);
+}
+.pricing-disclaimer{
+  margin-top:20px;
+  padding:14px 17px;
+  border:1px solid #f2e5d9;
+  border-left:3px solid var(--orange);
+  border-radius:10px;
+}
+@media(max-width:900px){
+  .service-accordion .service-price-block{padding:25px 17px 20px}
+  .service-plan{padding:21px 17px 18px}
+  .service-plan h3{font-size:18px}
+  .service-plan-price{font-size:25px}
+}
+@media(max-width:700px){
+  .service-accordion{margin-bottom:11px}
+  .service-accordion-trigger{min-height:62px;padding:16px 15px}
+  .service-accordion-trigger strong{font-size:14px}
+  .service-accordion .service-price-block{
+    padding:22px 12px 16px;
+    border-radius:0 0 14px 14px;
+  }
+  .service-price-heading{margin-bottom:19px}
+  .service-price-heading h2{font-size:25px}
+  .service-price-heading>a{padding:7px 11px;font-size:12px}
+  .service-price-grid{gap:12px}
+  .service-plan{padding:21px 18px 18px}
+  .service-plan h3{min-height:0;font-size:19px}
+  .service-plan-price{
+    min-height:0;
+    margin-bottom:10px;
+    font-size:28px;
+  }
+  .service-plan-price small{font-size:11px}
+  .service-plan-summary{min-height:0;margin-bottom:13px}
+  .service-plan ul{padding-top:14px}
+  .service-plan li{font-size:12.5px}
+  .service-plan-cta{min-height:47px;font-size:12.5px}
+}
+@media(prefers-reduced-motion:reduce){
+  .service-accordion-trigger,.service-accordion-trigger i{transition:none!important}
+}
