@@ -334,3 +334,41 @@
 @media(max-width:700px){
   .service-plan-price small{padding:5px 9px;font-size:11px}
 }
+
+/* Mobile pricing typography and card alignment refinement */
+@media(max-width:700px){
+  .pricing-page-hero-inner{text-align:left}
+  .pricing-page-hero .eyebrow{letter-spacing:1.6px}
+  .pricing-page-hero h1{font-size:clamp(30px,8vw,40px);line-height:1.15;letter-spacing:-.9px}
+  .pricing-page-hero-inner>p:not(.eyebrow){line-height:1.7}
+  .catalogue-intro{text-align:left;margin-bottom:24px}
+  .catalogue-intro h2{font-size:25px;line-height:1.2}
+  .catalogue-intro>p:not(.eyebrow){font-size:13px;line-height:1.65}
+  .service-accordion-trigger{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:9px;padding:15px 12px}
+  .service-accordion-trigger span{font-size:10px;white-space:nowrap}
+  .service-accordion-trigger strong{font-size:13px;line-height:1.35;overflow-wrap:anywhere}
+  .service-accordion-trigger i{font-size:22px}
+  .service-accordion .service-price-block{padding:19px 10px 13px}
+  .service-price-heading h2{font-size:22px;line-height:1.22}
+  .service-price-heading p:not(.service-kicker){font-size:12px;line-height:1.6}
+  .service-price-heading>a{align-self:flex-start;white-space:normal}
+  .service-plan{padding:19px 16px 16px}
+  .service-plan-type{font-size:9px;letter-spacing:.9px}
+  .service-plan h3{font-size:18px;line-height:1.3}
+  .service-plan-price{font-size:27px;line-height:1.2;overflow-wrap:anywhere}
+  .service-plan-summary{font-size:12px;line-height:1.6}
+  .service-plan li{font-size:12px;line-height:1.55}
+  .service-plan-cta{font-size:12px;white-space:normal}
+  .pricing-custom-inner{gap:18px;padding:20px 17px}
+  .pricing-custom-inner h2{font-size:24px;line-height:1.2}
+  .pricing-custom-inner p:not(.eyebrow){font-size:13px;line-height:1.65}
+  .pricing-faq-list summary{padding:17px 36px 17px 5px;font-size:13px;line-height:1.5}
+  .pricing-faq-list details p{padding:0 28px 17px 5px;font-size:12px;line-height:1.65}
+}
+@media(max-width:380px){
+  .service-accordion-trigger{grid-template-columns:1fr auto;gap:5px 8px}
+  .service-accordion-trigger span{grid-column:1;grid-row:1}
+  .service-accordion-trigger strong{grid-column:1;grid-row:2}
+  .service-accordion-trigger i{grid-column:2;grid-row:1 / span 2}
+  .service-plan-price{font-size:25px}
+}
