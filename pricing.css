@@ -131,11 +131,3 @@
  .pricing-custom-inner .btn{width:100%;justify-content:center}
  .pricing-faq{padding-top:42px;padding-bottom:42px}
 }
-
-/* Simplified three-option pricing for MSMEs */
-.pricing-three-options{margin-top:8px;align-items:stretch}
-.pricing-three-options .service-plan{min-width:0}
-.pricing-three-options .service-plan-summary{min-height:82px}
-.pricing-option-note{margin:0 0 18px;padding:11px 12px;border-radius:9px;background:#f6f9f5;color:#66746a;font-size:11.5px;line-height:1.55}
-.pricing-three-options .service-plan.featured{border-color:#83b695;box-shadow:0 12px 30px rgba(13,91,53,.08)}
-@media(max-width:900px){.pricing-three-options .service-plan-summary{min-height:0}}
