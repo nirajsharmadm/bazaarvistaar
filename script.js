@@ -54,7 +54,7 @@ document.querySelectorAll(".pricing-whatsapp").forEach(button => {
   button.addEventListener("click", event => {
     event.preventDefault();
     const config = window.BAZAARVISTAAR_CONFIG || {};
-    const number = (config.whatsappNumber || "").replace(/\\D/g, "");
+    const number = (config.whatsappNumber || "").replace(/\D/g, "");
     if (!number) {
       document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
       return;
