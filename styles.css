@@ -1312,3 +1312,8 @@ a{color:inherit;text-decoration:none}.container{width:min(1200px,calc(100% - 48p
   visibility:visible;
   opacity:1;
 }
+
+/* Enquiry heading follows the BazaarVistaar three-colour headline palette */
+.enquiry-form > h2 .heading-green{color:#0d5b35}
+.enquiry-form > h2 .heading-dark{color:#202622}
+.enquiry-form > h2 .heading-orange{color:#f26a21}
